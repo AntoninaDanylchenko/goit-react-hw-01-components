@@ -1,12 +1,21 @@
 import PropTypes from 'prop-types';
-import { FriendListBlock, FriendListItem } from './FriendList.styled.jsx';
+import {
+  FriendListBlock,
+  FriendListItem,
+  FriendStatus,
+} from './FriendList.styled.jsx';
+const getBgColor = variant => {
+  return variant ? 'green' : 'red';
+};
 
 function FriendList({ friends }) {
   return (
     <FriendListBlock>
       {friends.map(friend => (
         <FriendListItem key={friend.id}>
-          <span className="status"></span>
+          <FriendStatus
+            style={{ backgroundColor: getBgColor(friend.isOnline) }}
+          ></FriendStatus>
           <img
             className="avatar"
             src={friend.avatar}

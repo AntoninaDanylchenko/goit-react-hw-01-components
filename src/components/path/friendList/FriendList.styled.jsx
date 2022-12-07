@@ -21,3 +21,9 @@ export const FriendListItem = styled.li`
   font-weight: 500;
   margin-bottom: 15px;
 `;
+
+export const FriendStatus = styled.span`
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+`;
